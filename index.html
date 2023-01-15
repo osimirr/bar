@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            height: 500vh;
+        }
+
+        .line {
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            height: 10px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="line"></div>
+
+
+
+
+    <script>
+
+        const line = document.querySelector('.line');
+        let size = 50;
+        grow = true;
+
+        line.style.height = size + 'px';
+
+        window.addEventListener('scroll', function () {
+            if (grow) {
+                size += 5;
+                line.style.height = size + 'px';
+                line.style.backgroundColor = 'green'
+                
+            }
+            else {
+                size -= 5;
+                line.style.backgroundColor = 'red'
+                line.style.height = size + 'px';
+            }
+
+
+            if (size >= window.innerHeight / 2){
+            grow = !grow;
+            
+            }
+            else if(size == 10){
+            grow = !grow;
+            }
+        })
+
+    </script>
+</body>
+
+</html>
